@@ -1,0 +1,16 @@
+{
+  "name": "b2-cdn-worker",
+  "version": "1.0.0",
+  "description": "Cloudflare Worker proxy for private Backblaze B2 bucket with video streaming support",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "aws4fetch": "^1.0.20"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
