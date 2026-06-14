@@ -2,20 +2,13 @@ name = "b2-cdn-worker"
 main = "worker.js"
 compatibility_date = "2024-09-01"
 
-# ---- Custom domain route ----
-# cdn.mydomain.com ကို Cloudflare DNS မှာ ထည့်ပြီးမှ အလုပ်လုပ်ပါမယ်။
-routes = [
-  { pattern = "cdn.mydomain.com", custom_domain = true }
-]
+workers_dev = true
 
-# ---- Secret မဟုတ်တဲ့ config တွေ (public ဖြစ်လို့ ရတယ်) ----
+# routes အပိုင်းကို comment လုပ်ထားပါ (domain ရှိမှ ပြန်ဖွင့်ပါ)
+# routes = [
+#   { pattern = "cdn.mydomain.com", custom_domain = true }
+# ]
+
 [vars]
 B2_REGION = "us-west-004"
 B2_BUCKET_NAME = "lugyiapp"
-
-# ⚠️ အရေးကြီး:
-# B2_ACCESS_KEY_ID နဲ့ B2_SECRET_ACCESS_KEY တို့ကို ဒီ file ထဲ
-# လုံးဝ မထည့်ပါနဲ့။ (GitHub ပေါ်တင်ရင် ပေါက်ကြားသွားမှာမို့)
-# အောက်က command နဲ့ secret အနေနဲ့ သီးခြားထည့်ပါ:
-#   wrangler secret put B2_ACCESS_KEY_ID
-#   wrangler secret put B2_SECRET_ACCESS_KEY
